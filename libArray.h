@@ -53,7 +53,7 @@ void swap(char v[], int i, int j, int size); // swap elementi float
 
 void order(int v[], int size); // ordinamento array
 void order(float v[], int size); //ordinamento array
-
+void order(char v[], int size); //ordinamento array
 
 
 //ELIMINAZIONE ELEMENTO
