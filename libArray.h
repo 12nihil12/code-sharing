@@ -4,6 +4,8 @@
 
 using namespace std; 
 
+//check
+
 //STAMPA: 
 
 void paf(char [], int [], int); //stampa array su file
