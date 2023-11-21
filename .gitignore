@@ -1,2 +1,4 @@
 *.x
+*.exe
+*.o
 generaFile.C
