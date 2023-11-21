@@ -3,7 +3,7 @@
 
 //STAMPA: 
 
-void printf (int v[], int used) { //stampa array sapendo quanti valori ci sono
+void paf(int v[], int used) { //stampa array sapendo quanti valori ci sono
 
     ofstream file_out; 
     file_out.open("output.txt"); 
@@ -15,11 +15,11 @@ void printf (int v[], int used) { //stampa array sapendo quanti valori ci sono
     file_out.close(); 
 }
 
-void printf (float v[], int used) { //stampa array sapendo quanti valori ci sono
+void paf(float v[], int used) { //stampa array sapendo quanti valori ci sono
 
     ofstream file_out; 
     file_out.open("output.txt"); 
-    
+
     for (int c=0; c < used; c++ ){
         file_out << v[c]<< endl;
     }
@@ -27,7 +27,7 @@ void printf (float v[], int used) { //stampa array sapendo quanti valori ci sono
     file_out.close(); 
 }
 
-void printf (char v[], int used) { //stampa array sapendo quanti valori ci sono
+void paf(char v[], int used) { //stampa array sapendo quanti valori ci sono
 
     ofstream file_out; 
     file_out.open("output.txt"); 

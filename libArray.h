@@ -6,9 +6,9 @@ using namespace std;
 
 //STAMPA: 
 
-void printf(int [], int); //stampa array su file
-void printf(float [], int); //stampa array su file
-void printf(char[], int); //stampa array su file
+void paf(int [], int); //stampa array su file
+void paf(float [], int); //stampa array su file
+void paf(char[], int); //stampa array su file
 
 void print(int [], int); //stampa array
 void print(float [], int); //stampa array
