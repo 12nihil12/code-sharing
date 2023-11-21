@@ -6,7 +6,7 @@
 
 using namespace std; 
 
-int true1 (bool v[], int dim); 
+int true1 (bool v[], int dim, int); 
 int contaprimi(bool p[], int dim); 
 
 
@@ -22,8 +22,9 @@ int main (){
 
     cin >> N_max; 
 
+    int dim = N_max + 1; 
 
-    geq= new bool [N_max+1]; 
+    geq= new bool [dim]; 
 
     //order(nomefile, 9); controllo per inserimento libreria 
     //cout << nomefile; 
@@ -39,10 +40,14 @@ int main (){
     
 
     for(int p = 2; p <= N_max; p++){
-        i1 = true1(geq,N_max); 
-        for (int k = 2; i1*k <= N_max; k++){
-            geq[i1*k] = false; 
+        i1 = true1(geq,N_max,p); 
+        cout << i1 << endl; 
+        if(i1 != 0){
+            for (int k = 2; i1*k <= N_max; k++){
+                geq[i1*k] = false; 
+            }
         }
+        
         
     }
 
@@ -74,8 +79,8 @@ int main (){
 
 
 
-int true1 (bool p[], int dim){ //ritorna il primo indice per cui v[i]= 1
-    int c = 2; 
+int true1 (bool p[], int dim, int start){ //ritorna il primo indice per cui v[i]= 1
+    int c = start; 
     while(!p[c]){
         if(c == dim ){
             return 0; 
