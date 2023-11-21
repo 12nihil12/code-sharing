@@ -3,10 +3,10 @@
 
 //STAMPA: 
 
-void paf(int v[], int used) { //stampa array sapendo quanti valori ci sono
+void paf(char nomefile[],int v[], int used) { //stampa array sapendo quanti valori ci sono
 
     ofstream file_out; 
-    file_out.open("output.txt"); 
+    file_out.open(nomefile); 
     
     for (int c=0; c < used; c++ ){
         file_out << v[c]<< endl;
@@ -15,10 +15,10 @@ void paf(int v[], int used) { //stampa array sapendo quanti valori ci sono
     file_out.close(); 
 }
 
-void paf(float v[], int used) { //stampa array sapendo quanti valori ci sono
+void paf(char nomefile[],float v[], int used) { //stampa array sapendo quanti valori ci sono
 
     ofstream file_out; 
-    file_out.open("output.txt"); 
+    file_out.open(nomefile); 
 
     for (int c=0; c < used; c++ ){
         file_out << v[c]<< endl;
@@ -27,10 +27,10 @@ void paf(float v[], int used) { //stampa array sapendo quanti valori ci sono
     file_out.close(); 
 }
 
-void paf(char v[], int used) { //stampa array sapendo quanti valori ci sono
+void paf(char nomefile[],char v[], int used) { //stampa array sapendo quanti valori ci sono
 
     ofstream file_out; 
-    file_out.open("output.txt"); 
+    file_out.open(nomefile); 
     
     for (int c=0; c < used; c++ ){
         file_out << v[c]<< endl;
