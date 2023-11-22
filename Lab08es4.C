@@ -49,7 +49,6 @@ int main(){
 
     int p;
     for(int i=0; i<conta; i++){
-
             p = v_interi[i];
             Prime[i] = isPrime(p);
             Square[i] = isPerfectSquare(p);
@@ -58,18 +57,14 @@ int main(){
                 if(Prime[i] == false){
                     v_interi[i] = false;
                 }
-
             }
-
-            
-          
     }
     file_out.open("risultati.dat");
     if(file_out.fail()){
         return -2;
     }
 
-
+    // metto sul file solo i valori true
     for(int i=0; i<conta; i++){
         if(v_interi[i]){
             file_out<<v_interi[i];
@@ -83,11 +78,14 @@ int main(){
     }
 
     file_out.close();
-    //funzione ffff
+    
 
     delete []Square;
+    Square =NULL;
     delete []Prime;
+    Prime = NULL;
     delete []v_interi;
+    v_interi = NULL;
     return 0;
 }
 
@@ -104,9 +102,7 @@ bool isPrime(int n){
     return Prime;
 }
 
-void ffff(int N_max, int valori[]){
-    
-}
+
 bool isPerfectSquare(int n){
     bool isPsquare = false;
     int square;
