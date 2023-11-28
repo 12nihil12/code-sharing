@@ -1,0 +1,55 @@
+int& (o float& ...)--> riferimento : NON e' un puntatore 
+
+int a;
+int& ra=a; 
+ra e' equivalente ad a / alias, sinonimo 
+
+si riferisce ad un'altra variabile
+
+va inializzata SUBITO quando la si dichiara
+NON ha un  contenuto - non posso riassegnarlo 
+
+a cosa serve? 
+
+swap con puntatori si puo fare anche con riferimenti
+
+void swap(int& a, int& b){
+    int appo; 
+    appo = a; 
+    a = b; 
+    b = appo; 
+}
+
+quando la chiamo passo swap(v1, v2) con v1, v2 int 
+
+t-uple: struct 
+
+struct nome{
+    tipo1 nomedato1; --> campo 
+    tipo2 nomedato2; ecc...
+}; 
+
+dichiarare una struct e` dichiarare l'esistenza di un nuovo tipo di dato : 
+l'assegnamento poi procede normalmente 
+nome nomevar; 
+
+per scrivere nei campi: nomevar.campo = valore;
+
+
+strcpy (dove, stringa); 
+
+posso assegnare una struct ad un'altra struct (dello stesso tipo) !!!!!!!!
+
+
+
+posso dichiarare array di struct 
+
+un tpo dichiarato come struct e` un tipo derivato 
+
+struct myARRAY{
+    int size; 
+    int used; 
+    float *raw; // indirizzo dell'inzio array
+}; 
+
+per accedere alla posizione k del vettore vf di tipo myarray : vf.raw[k]; 
