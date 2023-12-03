@@ -57,7 +57,11 @@ myArrayInt caricaInteriFile(char nomefile[], int& errore){
 
 int main(){
     int errore = 0;
+
     myArrayInt v;
+    v.used = 0;
+    v.size = 0;
+    v.raw = NULL;
 
 
     char nome[] = "interi.dat";
