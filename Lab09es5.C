@@ -70,7 +70,7 @@ int main(){
     
 
     scremaSfera(v, count, newdim);
-    cout<<endl<<newdim;
+    cout<<endl<<"numero file senza'g': "<<newdim;
     for(int i=0; i<newdim; i++){
         cout<<endl<< v[i].diam <<v[i].colore;
     }
