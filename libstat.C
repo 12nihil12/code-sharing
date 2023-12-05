@@ -16,7 +16,7 @@ float media (int v[], int ndt){
 
 float media (float v[], int ndt){
 
-    int conta = 0; 
+    double conta = 0; 
 
 
 
@@ -26,7 +26,7 @@ float media (float v[], int ndt){
         conta= conta + v[c];
     }
 
-    float media = (float)conta / ndt; 
+    float media = conta / ndt; 
     return media; 
 }
 
