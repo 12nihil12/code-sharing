@@ -163,13 +163,3 @@ float mediana (float v[], int size){
     }
 }
 
-double mediana (double v[], int size){
-
-    order(v, size); 
-    
- if(size%2==0){
-        return (float)(v[size/2 -1 ]+v[size/2 ])/2;
-    } else {
-        return (float)v[(size+1)/2 -1]; 
-    }
-}
