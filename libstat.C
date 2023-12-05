@@ -16,7 +16,7 @@ float media (int v[], int ndt){
 
 float media (float v[], int ndt){
 
-    double conta = 0; 
+    float conta = 0; 
 
 
 
@@ -27,6 +27,19 @@ float media (float v[], int ndt){
     }
 
     float media = conta / ndt; 
+    return media; 
+}
+
+double media (double v[], int ndt){
+
+    double conta = 0; 
+
+
+    for( int c= 0; c < ndt; c++){
+        conta= conta + v[c];
+    }
+
+    double media = conta / ndt; 
     return media; 
 }
 
@@ -46,6 +59,7 @@ float devstd (int v[], int ndt) {
 
     return devstd; 
 }
+
 float devstd (float v[], int ndt) {
 
 
@@ -61,6 +75,27 @@ float devstd (float v[], int ndt) {
 
     return devstd; 
 }
+
+
+
+double devstd (double v[], int ndt) {
+
+
+    double scarto = 0;
+    double x = media(v, ndt); 
+
+     for( int c= 0; c < ndt; c++){
+        scarto = scarto + pow((x - v[c]), 2); 
+    }
+
+
+    double devstd = sqrt(scarto/ (ndt -1)); 
+
+    return devstd; 
+}
+
+
+
 float devstd (int v[], int ndt, float x) { // devstd (avendo gia` la media)
 
     float scarto = 0;
@@ -74,6 +109,7 @@ float devstd (int v[], int ndt, float x) { // devstd (avendo gia` la media)
 
     return devstd; 
 }
+
 float devstd (float v[], int ndt, float x) { // devstd (avendo gia` la media)
 
     float scarto = 0;
@@ -89,6 +125,21 @@ float devstd (float v[], int ndt, float x) { // devstd (avendo gia` la media)
 }
 
 
+
+double devstd (double v[], int ndt, double x) { // devstd (avendo gia` la media)
+
+    double scarto = 0;
+
+     for( int c= 0; c < ndt; c++){
+        scarto = scarto + pow((x - v[c]), 2); 
+    }
+
+
+    double devstd = sqrt(scarto/ (ndt -1)); 
+
+    return devstd; 
+}
+
 //MEDIANA 
 float mediana (int v[], int size){
 
@@ -100,7 +151,19 @@ order(v, size);
         return (float)v[(size+1)/2 -1]; 
     }
 }
+
 float mediana (float v[], int size){
+
+    order(v, size); 
+    
+ if(size%2==0){
+        return (float)(v[size/2 -1 ]+v[size/2 ])/2;
+    } else {
+        return (float)v[(size+1)/2 -1]; 
+    }
+}
+
+double mediana (double v[], int size){
 
     order(v, size); 
     
