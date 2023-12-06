@@ -25,10 +25,10 @@ void seedset (){ //resetta seme
 
     char check; 
 
-    cout << "Resettare il seed? [y] [n]" << endl; 
+    cout << "Resettare il seed? [y/n]" << endl; 
     cin >> check; 
 
-    if(check == 'n'){
+    if(check != 'y'){
         cout << "Seed non resettato. Attenzione, ritroverà gli stessi valori casuali della precedente implementazione" << endl; 
         return; 
     }
