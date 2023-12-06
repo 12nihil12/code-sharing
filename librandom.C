@@ -40,15 +40,9 @@ void seedset (){ //resetta seme
     return; 
 }
 
+//metodo montecarlo
 
-double f(double x){
-    double y; 
-    y = pow(x,3) * cos(x); 
-
-    return y; 
-}
-
-double int_ril (int k, double a, double b){ // calcola integrale di f(x) in [a,b]
+double int_ril (int k, double a, double b, double (*f)(double x) ){ // calcola integrale di f(x) in [a,b]
 
     double dx; 
     double F = 0; 
@@ -60,7 +54,7 @@ double int_ril (int k, double a, double b){ // calcola integrale di f(x) in [a,b
 
     for ( int e = 0; e < k; e++){  //sommatoria delle f(x)
         x= randunif(a,b); 
-        F= F + f(x);
+        F= F + (*f)(x);
         
     }
 
@@ -70,8 +64,9 @@ double int_ril (int k, double a, double b){ // calcola integrale di f(x) in [a,b
 
 }
 
-bool is_inside (double y, double x){ // controlla se (x,y) e' dentro l'area sottesa a f(x) 
-    if(abs(y) <= abs(f(x))){
+
+bool is_inside (double y, double x, double (* f)(double x)){ // controlla se (x,y) e' dentro l'area sottesa a f(x) 
+    if(abs(y) <= abs((*f)(x))){
         return true; 
     }
     return false; 
@@ -79,7 +74,7 @@ bool is_inside (double y, double x){ // controlla se (x,y) e' dentro l'area sott
 
 
 
-double ril_area(int k, double a, double b){ //ritorna l'area della funzione f in [a, b]
+double ril_area(int k, double a, double b, double (* f)(double x)){ //ritorna l'area della funzione f in [a, b]
 
     int c_i = 0;  
     double x,y;
@@ -89,7 +84,7 @@ double ril_area(int k, double a, double b){ //ritorna l'area della funzione f in
     for ( int e = 0; e < k; e++){  //sommatoria delle f(x)
         x= randunif(a,b); 
         y = randunif(-4,1);
-        if(is_inside(y,x)){
+        if(is_inside(y,x,f)){
             c_i++; 
         }
     }
