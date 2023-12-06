@@ -61,7 +61,17 @@ points_array load_points_file (char nomefile[], int & errcode){
 void print_points_file(char nomefile[], R2point v[], int da, int a) { //stampa array da indice a indice 
 
     ofstream file_out; 
-    file_out.open(nomefile); 
+
+    cout << "Vuole riscrivere il file? [y/n]" << endl; 
+    char check; 
+    cin >> check; 
+    if(check == 'y'){
+        file_out.open(nomefile); 
+    } else {
+        file_out.open(nomefile,ios_base::app); 
+    }
+
+
     //file_out << "Dati" << endl; 
     
     for (int c=da; c <= a; c++ ){
