@@ -65,8 +65,8 @@ double int_ril (int k, double a, double b, double (*f)(double x) ){ // calcola i
 }
 
 
-bool is_inside (double y, double x, double (* f)(double x)){ // controlla se (x,y) e' dentro l'area sottesa a f(x) 
-    if(abs(y) <= abs((*f)(x))){
+bool is_inside (double y, double x ,double (* f)(double x)){ // controlla se (x,y) e' dentro l'area sottesa a f(x) 
+    if(abs(y)<= abs((*f)(x))){
         return true; 
     }
     return false; 
@@ -74,7 +74,7 @@ bool is_inside (double y, double x, double (* f)(double x)){ // controlla se (x,
 
 
 
-double ril_area(int k, double a, double b, double (* f)(double x)){ //ritorna l'area della funzione f in [a, b]
+double ril_area(int k, double a, double b, double (* f)(double x), double max, double min){ //ritorna l'area della funzione f in [a, b]
 
     int c_i = 0;  
     double x,y;
@@ -83,13 +83,13 @@ double ril_area(int k, double a, double b, double (* f)(double x)){ //ritorna l'
 
     for ( int e = 0; e < k; e++){  //sommatoria delle f(x)
         x= randunif(a,b); 
-        y = randunif(-4,1);
+        y = randunif(min,max);
         if(is_inside(y,x,f)){
             c_i++; 
         }
     }
 
-    E= abs((a-b))*5; 
+    E= abs((a-b))*abs(min - max); 
     A= ((double)c_i/k)*E; 
 
     return A; 
