@@ -23,7 +23,6 @@ struct myArrayR2{
 
 //const puntoR2 centro = {0.0, 0.0};
 
-double randUniforme(double min, double max);
 bool insideCircle(puntoR2, double);
 double dist(puntoR2, double);
 int countWithin(int, double );
@@ -112,8 +111,6 @@ double rilev(int n, double r){
     conta.size = M;
 
 
-
-
     for(int i=0; i<M; i++){
         conta.raw[i] = countWithin(n, r); //conto solo i numeri all'interno del cerchio
         conta.used++;
@@ -123,9 +120,7 @@ double rilev(int n, double r){
     varianza = pow(2, devstdMed(conta.raw, conta.used, med));// deviazione standard conoscendo la media alla 2
     
 
-
     cout<<endl<<"varianza = "<<varianza;
-
 
     delete []conta.raw;
     conta.size = 0;
