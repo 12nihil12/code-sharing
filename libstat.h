@@ -1,3 +1,6 @@
+#ifndef libstat_h
+#define libstat_h
+
 #include <iostream> 
 #include <cmath> 
 #include "libArray.h"
@@ -22,3 +25,4 @@ float mediana (int [], int );
 float mediana (float [], int );
 
 
+#endif

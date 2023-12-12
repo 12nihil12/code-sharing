@@ -1,4 +1,6 @@
 #include "R2point.h"
+#include <iostream>
+#include <fstream> 
 
 #ifndef R2_POINTS_ARRAY
 #define R2_POINTS_ARRAY

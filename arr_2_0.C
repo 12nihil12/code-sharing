@@ -1,5 +1,6 @@
 #include "arr_2_0.h"
 
+//libreria di funzioni più complesse relative a array di interi
 
 int resize_arr (arr_int & myA, int newdim){
 
@@ -7,7 +8,7 @@ int resize_arr (arr_int & myA, int newdim){
 
     if(newdim == myA.size){
         cout << "No need to perform operation. New declared size matches original size" << endl;
-        return -1;  
+        return 0;  
     }else if(newdim < myA.used){ //restringo array
         myA.used = newdim; //mi servono solo questi
     } //else: allargo array 
@@ -39,24 +40,21 @@ int resize_arr (arr_int & myA, int newdim){
 
 }
 
-bool leggiDato(ifstream& file, int &rdato){
+bool readdata(ifstream& file_in, int &rdato){
    
-   //Variabile di appoggio
-   int appo;
+   
+   int appo; // appoggio
 
-   //Leggo da stream e registro in variabile di appoggio
-   file >> appo;
+   file_in >> appo;
 
-   //Controllo stato dello stream: se in fail() o lo stream è in eof, restituisco false
-   //in questo modo il programma chiamante potrà accorgersi che il dato manca.
-   if(file.eof() || file.fail()){
-      return false;
+   if(file_in.eof() || file_in.fail()){
+      return false; //non ho potuto leggere il dato
    }
    else{
-      //Il dato effettivamente c'e`. Lo salvo nella variabile "che esporta il valore dalla funzione"
-      rdato = appo;
-      //Tutto a posto: il dato c'e`: restutuisco true
-      return true;
+      
+      rdato = appo; // carico il dato su "dato" tramite un riferimento a dato 
+      
+      return true;//il dato è stato caricato
    }
 
 
@@ -69,11 +67,7 @@ int up_file (char nomefile [], arr_int& myA){
     
     bool status = true; 
     int appo; 
-    int c = 0;
-    int dim0 = 20; 
-    int incr = 10; 
-    //int * v; 
-
+    int errcode; 
     
     file_in.open(nomefile); 
     
@@ -88,18 +82,29 @@ int up_file (char nomefile [], arr_int& myA){
     myA.used =0; 
     myA.size = dim0; 
  
-    status = leggiDato(file_in,appo);  
-    while (status == true)
-    {
+    status = readdata(file_in,appo); //carica, se c'è, il dato
+    while (status == true){
         if(myA.used == myA.size) {
-            resize_arr(myA,myA.size + incr); 
+            errcode = resize_arr(myA,myA.size + incr); 
+            if (errcode != 0){
+                return -1; //errore di allocazione 
+            }
         }
         myA.raw[myA.used] = appo; 
-        //cout << "c: " << myA.used << " value " << appo << endl; 
-        status = leggiDato(file_in,appo); 
+        status = readdata(file_in,appo); 
         myA.used++; 
     }
     
     return 0; 
      
+}
+
+int searchkey(arr_int & myA, int key){ //ricerca elemento nell'array data una chiave
+    for(int i = 0; i < myA.used; i++){
+        if(myA.raw[i] == key){
+            return i; //ha trovato l'elemento, ora riporta la sua posizione
+        }
+    }
+
+    return -1; //l'elemento non c'è 
 }

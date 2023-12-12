@@ -64,7 +64,7 @@ double int_ril (int k, double a, double b, double (*f)(double x) ){ // calcola i
 
 }
 
-
+/*  
 bool is_inside (double y, double x ,double (* f)(double x)){ // controlla se (x,y) e' dentro l'area sottesa a f(x) 
     if(abs(y)<= abs((*f)(x))){
         return true; 
@@ -96,7 +96,7 @@ double ril_area(int k, double a, double b, double (* f)(double x), double max, d
 
 }
 
-
+*/
 
 
 

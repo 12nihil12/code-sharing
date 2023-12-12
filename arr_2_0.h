@@ -1,13 +1,14 @@
-#ifndef arr_2_0
-#define arr_2_0
+#ifndef arr_2_0_h
+#define arr_2_0_h
 
 #include <iostream> 
 #include <fstream>
 #include <cstring>
 #include "libArray.h"
 
-//#define dim0 20
-//#define incr 10
+// per caricamento dati da file su array: dimensione di partenza e incremento
+#define dim0 20 
+#define incr 10
 
 using namespace std; 
 
@@ -17,8 +18,8 @@ struct arr_int{
     int size; // dimensione array
 };
 
-bool leggiDato(ifstream& file, int &rdato); 
-int resize_arr (arr_int & myA, int newdim); 
-int up_file (char nomefile [], arr_int& myA); 
-
+bool readdata(ifstream& file, int &rdato); //carico un singolo dato da file
+int resize_arr (arr_int & myA, int newdim); // resizes array to newdim
+int up_file (char nomefile [], arr_int& myA); //carica dati da file in array
+int searchkey(arr_int & myA, int key); 
 #endif

@@ -1,3 +1,6 @@
+#ifndef libArray_h
+#define libArray_h 
+
 
 #include <iostream>
 #include <fstream> 
@@ -69,4 +72,4 @@ int delshift(int v[], int used,   int where ); //elimina el array spostando tutt
 int delshift(float v[], int used,   int where ); //elimina el array spostando tutto indietro di 1
 int delshift(char v[], int used,   int where ); //elimina el array spostando tutto indietro di 1
 
-
+#endif

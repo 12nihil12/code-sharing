@@ -22,8 +22,6 @@ bool load_point (ifstream& file_in, R2point & p){
 
 void print_point_file (ofstream& file_out, char nomefile[], R2point p){ //print on file
 
-    //file_out.open(nomefile, ios_base::app); 
-
     file_out << p.x << setw(12) << p.y << endl; 
 
     return; 

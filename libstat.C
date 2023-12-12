@@ -18,10 +18,6 @@ float media (float v[], int ndt){
 
     float conta = 0; 
 
-
-
-
-
     for( int c= 0; c < ndt; c++){
         conta= conta + v[c];
     }
