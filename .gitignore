@@ -2,3 +2,4 @@
 *.exe
 *.o
 generaFile.C
+.vscode/tasks.json
