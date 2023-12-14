@@ -7,6 +7,8 @@
 
 using namespace std; 
 
+
+
 float media (int [], int );
 float media (float [], int );
 double media (double [], int );

@@ -44,8 +44,6 @@ points_array load_points_file (char nomefile[], int & errcode){
             load_point(file_in,p_arr.raw[p_arr.used]); //carica punto su array
         }
 
-        p_arr.used--; 
-
         file_in.close(); 
 
         errcode = 0; 
@@ -54,9 +52,6 @@ points_array load_points_file (char nomefile[], int & errcode){
 
    
 }
-
-
-
 
 void print_points_file(char nomefile[], R2point v[], int da, int a) { //stampa array da indice a indice 
 
@@ -80,3 +75,55 @@ void print_points_file(char nomefile[], R2point v[], int da, int a) { //stampa a
 
     file_out.close(); 
 }
+
+
+void retta(points_array v, double m, double q){ //dati m e q, calcola le y di un vettore di x 
+    for (int i = 0; i < v.used; i++){
+        v.raw[i].y = m*v.raw[i].x + q; 
+    }
+
+    return; 
+}
+
+
+void baricentri (points_array v, double & x_m, double & y_m){ 
+    double conta_x = 0; 
+    double conta_y = 0; 
+    for( int c= 0; c < v.used; c++){
+        conta_x= conta_x + v.raw[c].x;
+        conta_y= conta_y + v.raw[c].y;
+
+    }
+
+    x_m = conta_x / v.used; //baricentro x
+    y_m = conta_y / v.used; // baricentro y 
+
+}
+
+
+double scarto_xy (points_array v,double x_m, double y_m){
+
+    double ss = 0; //somma scarti 
+    for(int i = 0; i < v.used; i++){
+        ss = ss + (v.raw[i].x-x_m)*(v.raw[i].y-y_m); 
+    }
+
+    return ss; 
+}
+
+double scarto_2 (points_array v,double x_m, double y_m, bool which){ //calcola lo scarto al quadrato di x o y
+    double ss = 0; //somma scarti 
+
+    if(which){ //se which = true, calcola la somma degli scarti di x
+        for(int i = 0; i < v.used; i++){
+            ss = ss + pow((v.raw[i].x - x_m),2); 
+        }
+        return ss; 
+    } else{
+        for(int i = 0; i < v.used; i++){
+            ss = ss + pow((v.raw[i].y - y_m),2); 
+        }
+        return ss; 
+    }
+}
+
