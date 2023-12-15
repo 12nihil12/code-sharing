@@ -1,3 +1,4 @@
+
 #include "R2point.h"
 #include <iostream>
 #include <fstream> 
@@ -17,7 +18,7 @@ points_array load_points_file (char nomefile[], int & errcode); //carica i punti
 
 void print_points_file(char nomefile[], R2point v[], int da, int a); //stampa array da indice a indice 
 
-void retta(points_array v, double m, double q); 
+void retta(points_array & v, double m, double q); 
 
 void baricentri (points_array v, double & x_m, double & y_m); // restituisce i p
 double scarto_xy (points_array v,double x_m, double y_m); //calcola il prodotto degli scarti (per covarianza)
