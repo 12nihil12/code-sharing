@@ -77,9 +77,9 @@ void print_points_file(char nomefile[], R2point v[], int da, int a) { //stampa a
 }
 
 
-void retta(points_array v, double m, double q){ //dati m e q, calcola le y di un vettore di x 
-    for (int i = 0; i < v.used; i++){
-        v.raw[i].y = m*v.raw[i].x + q; 
+void retta(points_array & rv, double m, double q){ //dati m e q, calcola le y di un vettore di x 
+    for (int i = 0; i < rv.used; i++){
+        rv.raw[i].y = m*rv.raw[i].x + q; 
     }
 
     return; 
