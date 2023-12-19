@@ -18,8 +18,20 @@ struct arr_int{
     int size; // dimensione array
 };
 
+
+void initialize (arr_int * v){
+    v-> size = 0; 
+    v -> used = 0; 
+    v-> raw = NULL; 
+}
+
+
 bool readdata(ifstream& file, int &rdato); //carico un singolo dato da file
 int resize_arr (arr_int & myA, int newdim); // resizes array to newdim
 int up_file (char nomefile [], arr_int& myA); //carica dati da file in array
 int searchkey(arr_int & myA, int key); 
+
+void merge(int v[], int low, int mid, int high); //merge
+void mergesort(int v [] , int low, int high); // ordinamento con merge
+
 #endif

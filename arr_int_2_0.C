@@ -1,6 +1,9 @@
-#include "arr_2_0.h"
+#include "arr_int_2_0.h"
 
 //libreria di funzioni più complesse relative a array di interi
+
+
+
 
 int resize_arr (arr_int & myA, int newdim){
 
@@ -100,6 +103,7 @@ int up_file (char nomefile [], arr_int& myA){
 }
 
 int searchkey(arr_int & myA, int key){ //ricerca elemento nell'array data una chiave
+
     for(int i = 0; i < myA.used; i++){
         if(myA.raw[i] == key){
             return i; //ha trovato l'elemento, ora riporta la sua posizione
@@ -107,4 +111,58 @@ int searchkey(arr_int & myA, int key){ //ricerca elemento nell'array data una ch
     }
 
     return -1; //l'elemento non c'è 
+}
+
+
+
+void merge(int v[], int low, int mid, int high) {
+
+    int l = low; //indicizza l'array di sinistra
+    int r = mid +1; // indicizza l'array di destra
+    int i = 0; //indicizza l'array d'appoggio
+    int k; // indicizza i residui
+    
+    int * app; 
+
+    app = new int [high - low + 1]; 
+
+    while (l <= mid, r <= high){ // l'elemento di destra e` maggiore di quello di sinistra
+        if(v[l]>= v[r]){
+            app[i]=v[l]; 
+            l++; 
+        } else {
+            app[i]=v[r]; 
+            r++; 
+        }
+        i++; 
+    }
+    if(l > mid){ //ho finito l'array di sinistra
+        for(k = r; k <= high; k++ ){
+            app[i] = v[r]; 
+            r++; 
+        }
+    } // ho finito l'array di destra 
+    else{
+        for(k = l; k <= mid; k++ ){
+            app[i] = v[l]; 
+            l++; 
+        }
+    }
+    
+
+
+    memcpy(v + low, (const void *) app, (high - low + 1)*sizeof(int)); 
+
+    delete [] app; 
+    app = NULL;  
+}
+
+void mergesort(int v [] , int low, int high){
+    if (low < high){
+        
+        int mid = (high +low)/2; 
+        mergesort(v,low, mid);
+        mergesort(v,mid + 1, high);  
+        merge(v,low, mid, high); 
+    }
 }
