@@ -1,0 +1,556 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{enumitem}
+
+
+\title{Calcolo differenziale}
+\author{Elisa Frigerio }
+\date{11/12- 21/12 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Funzioni derivabili e differenziabili}
+
+\begin{tcolorbox}[colback = pink!10!white,   colframe=red!50!blue]
+  \textcolor{violet}{DEFINIZIONE: }
+
+  $f:=(a, b) \in \mathbb{R} \to \mathbb{R}$ è \textcolor{purple}{derivabile} in $x_0 \in (a, b)$ se
+
+  \[ \exists \lim_{h \to 0} \frac{f(x_0 + h) -f(x_0)}{h}=\lim_{x \to x_o} \frac{f(x) -f(x_0)}{x-x_0}:=f'(x_0) \in \mathbb{R}\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=purple]
+ \begin{itemize}
+     \item f è \textcolor{purple}{derivabile} in (a,b) se è derivabile in \textcolor{purple}{ogni punto} di (a,b)
+     \item $y=f'(x_0)(x-x_0)+f(x_0)$ è la retta \textcolor{purple}{tangente} a $f(x)$ in $x_0$
+ \end{itemize}
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback = pink!10!white,   colframe=red!50!blue]
+
+  $f:=(a, b) \in \mathbb{R} \to \mathbb{R}$ è \textcolor{purple}{differenziabile} in $x_0 \in (a, b)$ se
+
+  f si approssima con il \textcolor{purple}{polinomio} $P(x,x_0)=f(x_0) + f'(x_0)(x - x_0)$, più un \textcolor{purple}{resto} $R(x, x_0) = o(x-x_0)$ \textcolor{purple}{trascurabile} rispetto a $x - x_0$
+
+
+\end{tcolorbox}
+
+\[\lim_{x \to x_o} \frac{f(x) -f(x_0)}{x-x_0}:=f'(x_0) \in \mathbb{R}\]
+\[\lim_{x \to x_o} \left[\frac{f(x) -f(x_0)}{x-x_0} - f'(x_0) \right] = 0\]
+\[\frac{f(x) -f(x_0)}{x-x_0} - f'(x_0)  = o(1)\]
+\[f(x) = f(x_0) + f'(x_0)(x - x_0) + o(x - x_0)\]
+
+Per funzioni ad una variabile derivabile $\Rightarrow $ differenziabile. 
+
+\begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+  \textcolor{red}{TEOREMA: }
+  Una funzione \textcolor{purple}{derivabile} è \textcolor{purple}{continua}. Non vale il viceversa. 
+\end{tcolorbox}
+
+\begin{proof}
+
+$\lim_{x \to x_0} f(x) = \lim_{x \to x_0} f(x_0) + f'(x_0)(x - x_0) + o(x - x_0) = f(x_0) \Rightarrow $ è \textcolor{purple}{continua}
+    
+\end{proof}
+
+\subsection{Derivate fondamentali}
+Si dimostra che: 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+         f(x)& f'(x) \\
+         c& 0\\
+         $x^n$ & $n\cdot x^{n-1}$\\
+         $x^a \; a \in \mathbb{R}, x >0 $&  $ a\cdot x^{a-1}$\\
+         $\lg|x|$ &  $\frac{1}{x} \; \forall x \in \mathbb{R}\setminus \{0\}$\\
+          $\sin x$ & $\cos x$\\
+         $ \cos x $& $-\sin x$ \\
+         $e^x$& $e^x$ \\
+    \end{tabular}
+\end{table}
+
+\subsection{Formule di derivazione}
+
+\begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+  \textcolor{red}{TEOREMA: }
+ 
+Siano $f,g := (a,b) \subset \mathbb{R} \to \mathbb{R}$ derivabili in $x_0$
+
+\[c\cdot f(x), f(x)\pm g(x), f(x)\cdot g(x), \frac{f(x)}{g(x)} \; (g(x_0)\neq 0), \]
+sono \textcolor{purple}{derivabili}, e vale: 
+\end{tcolorbox}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \\
+        $c\cdot f(x_0)$ & $c \cdot f'(x_0)$\\
+        \\
+         \hline
+         \\
+         $f(x_0) \pm g(x_0)$&  $f'(x_0) \pm g'(x_0)$\\
+         \\
+         \hline
+         \\
+         $f(x_0) \cdot g(x_0)$& $ f'(x_0)g(x_0) + g'(x_0)f(x_0)$ \\
+         \\
+         \hline
+         \\
+         $\frac{f(x_0)}{g(x_0)}$&  $\frac{ f'(x_0)g(x_0) - g'(x_0)f(x_0)}{g(x_0)^2}$\\
+         \\
+         \hline
+         
+    \end{tabular}
+\end{table}
+
+      \begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+
+Siano $f:= I \to J $ derivabile in $x_0 \in I$  e $ g:= J \to \mathbb{R} $ derivabile in $f(x_0) \in J $ I, J \textcolor{purple}{intervalli }$ \Rightarrow g \circ f $ è \textcolor{purple}{derivabile} 
+
+\end{tcolorbox}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+         \hline
+         \\
+     $g(f(x_0)$ & $g'(f(x_0)f'(x_0)$ \\
+     \\
+        \hline
+    \end{tabular}
+    
+\end{table}
+
+\subsection{Derivata dell'inversa}
+
+      \begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+  \textcolor{red}{TEOREMA: }
+ 
+Sia $f:= I \to J $ \textcolor{purple}{invertibile} e sia $f^{-1}:= J \to I$ la sua \textcolor{purple}{inversa}
+
+Se f è \textcolor{purple}{derivabile} in $x_0 \Rightarrow f^{-1}$ è \textcolor{purple}{derivabile } in $y_0=f(x_0)$ e vale 
+\[[f^{-1}(y_0)]' = \frac{1}{f'(x_0)}\]
+
+
+\end{tcolorbox}
+
+\subsection{Punti di non derivabilità}
+
+Si dice che $f$, continua in $x_0$ presenta in $x_0$: 
+
+\begin{itemize}
+    \item \begin{tcolorbox}[colback = pink!10!white,   colframe=red!50!blue]
+    Un \textcolor{purple}{punto angoloso } se: 
+    \[f'_+(x_0) \in \mathbb{R} \neq f'_-(x_0) \in \mathbb{R} \]
+    \end{tcolorbox}
+    \item \begin{tcolorbox}[colback = pink!10!white,   colframe=red!50!blue]
+    Una \textcolor{purple}{cuspide} se: 
+    \[\lim_{h \to 0}\frac{f(x_0 + h) -f(x_0)}{h} = l \in \{- \infty, + \infty\} \neq \lim_{h \to 0}\frac{f(x_0 + h) -f(x_0)}{h} = L \in \{- \infty, + \infty\} \]
+    \end{tcolorbox}
+     \item \begin{tcolorbox}[colback = pink!10!white,   colframe=red!50!blue]
+    Un \textcolor{purple}{punto a tangente verticale} se: 
+    \[\lim_{h \to 0}\frac{f(x_0 + h) -f(x_0)}{h} = l \in \{- \infty, + \infty\} = \lim_{h \to 0}\frac{f(x_0 + h) -f(x_0)}{h} = l \in \{- \infty, + \infty\} \]
+    \end{tcolorbox}
+\end{itemize}
+
+\section{Applicazioni delle derivate}
+
+\subsection{Estremi}
+
+\begin{tcolorbox}[colback = pink!10!white,   colframe=red!50!blue]
+  \textcolor{violet}{DEFINIZIONE: }
+  Sia $f:= I \to \mathbb{R} $, I intervallo $x_0 \in I$
+
+  $x_0 $ è un punto di
+  \begin{itemize}
+      \item \textcolor{purple}{massimo locale} (o relativo)  se $\exists \delta >0 \mid f(x_0) \ge f(x) \forall x \in I \cap (x_0 - \delta, x_0 + \delta)$
+      \item \textcolor{purple}{minimo locale} (o relativo) se $\exists \delta >0 \mid f(x_0) \le f(x) \forall x \in I \cap (x_0 - \delta, x_0 + \delta)$
+  \end{itemize}
+\end{tcolorbox}
+\begin{itemize}
+    \item $f(x_0)$ è detta rispettivamente \textcolor{purple}{massimo o minimo} locale.
+    \item $x_0$ si dice \textcolor{purple}{estremante relativo}, $f(x_0)$ si dice \textcolor{purple}{estremo relativo} 
+    \item se la proprietà vale su \textcolor{purple}{tutto }I, si dice che l'\textcolor{purple}{estremante} è \textcolor{purple}{globale}(o assoluto)
+    \item Se la disuguaglianza è \textcolor{purple}{stretta}, si dice massimo o minimo \textcolor{purple}{forte}
+\end{itemize}
+
+\subsection{Teorema di Fermat}
+
+      \begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+
+Sia $f:= (a,b) \to \mathbb{R} $ e $x_0 \in (a,b)$ sia un \textcolor{purple}{estremo relativo}.
+
+Se f è \textcolor{purple}{derivabile} in $x_0 \Rightarrow f'(x_0) = 0$
+
+\end{tcolorbox}
+
+\begin{proof} 
+($x_0$ punto di \textcolor{purple}{massimo})
+\[f(x_0) \ge f(x) \forall x \in I \cap (x_0 - \delta, x_0 + \delta) \Rightarrow f(x)-f(x_0) \le 0\]
+    \[lim_{x \to x_0+} \frac{f(x) - f(x_0)}{x - x_0}= f'(x_0)^+ \le 0 \quad (x -x_0 > 0) \]
+    \[lim_{x \to x_0-} \frac{f(x) - f(x_0)}{x - x_0}= f'(x_0)^- \ge 0 \quad (x -x_0 < 0)  \Rightarrow\]
+    \[lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}= f'(x_0)=0\]
+    
+\end{proof}
+
+\subsection{Teorema di Rolle}
+
+      \begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+
+Sia $f:= [a,b] \to \mathbb{R} $, 
+\begin{itemize}
+    \item \textcolor{purple}{continua} su $[a,b]$
+    \item \textcolor{purple}{derivabile} su $(a,b)$
+    \item f(a) =f(b) 
+\end{itemize}
+
+    $\Rightarrow \exists x_0 \in (a, b) \mid f'(x_0) = 0 $ 
+\end{tcolorbox}
+
+\begin{proof}
+    Ho  due casi: 
+    
+    \begin{itemize}
+    \item $f(x) = f(a) = f(b) \forall x \Rightarrow f'(x) = 0 \; \forall x$
+    \item $f(x)$ non è costante:
+    \end{itemize}
+   Per il \textcolor{purple}{teorema di Weierstrass}, $\exists x_m \in [a,b] \mid x_m$ è un \textcolor{purple}{punto di minimo assoluto}, $\exists x_M \in [a,b] \mid x_M$ è un \textcolor{purple}{punto di massimo assoluto}. 
+
+   Siccome $f(a) = f(b) $ e $f(x_m )\neq f(x_M)$, non possono cadere entrambi sugli estremi. Sia $x_0 $ il punto che cade in $(a,b)$, per il \textcolor{purple}{teorema di Fermat}, $f'(x_0) = 0$
+\end{proof}
+
+\subsection{Teorema di Lagrange}
+
+      \begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+
+Sia $f:= [a,b] \to \mathbb{R} $, 
+\begin{itemize}
+    \item \textcolor{purple}{continua} su $[a,b]$
+    \item \textcolor{purple}{derivabile} su $(a,b)$
+\end{itemize}
+
+    $\Rightarrow \exists x_0 \in (a, b) \mid f'(x_0) = \frac{f(b) - f(a)}{b -a}$ 
+\end{tcolorbox}
+
+\begin{proof}
+    Si considera $F(x) = f(x) - \left[ f(a) + \frac{f(b) - f(a)}{b -a}(x-a)\right] $ continua e derivabile come f. 
+
+    Sostituendo, si ottiene: $F(a) =F(b)=0$, che soddisfa le ipotesi per il \textcolor{purple}{teorema di Rolle}
+
+$\Rightarrow \exists x_0 \mid F'(x_0) =0$
+\[F'(x_0)= f'(x_0) - \frac{f(b) - f(a)}{b -a} = 0 \]
+\[f'(x_0) = \frac{f(b) - f(a)}{b -a} \]
+
+\end{proof}
+
+\subsection{Teorema di Cauchy }
+
+
+ \begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+
+Sia $F,G:= [a,b] \to \mathbb{R} $, 
+\begin{itemize}
+    \item \textcolor{purple}{continue} su $[a,b]$
+    \item \textcolor{purple}{derivabili} su $(a,b)$
+\end{itemize}
+$\exists x_0 \in (a, b) \mid $
+
+\[ [G(b)-G(a)] F'(x_0) = [F(b)-F(a)]G'(x_0)\]
+\end{tcolorbox}
+
+\begin{proof}
+    Sia $f(x) = [G(b)-G(a)] F(x) - [F(b)-F(a)]G(x)$
+
+    E' evidente che $f(a) = f(b) = 0$ : f, (che eredita le proprietà di \textcolor{purple}{continuità  e derivabilità } di F e G) soddisfa le ipotesi del \textcolor{purple}{teorema di Rolle}
+
+    $\exists x_0 \mid f'(x_0) = 0$, cioè $[G(b)-G(a)] F'(x_0) - [F(b)-F(a)]G'(x_0) = 0$   
+
+
+    
+    
+\end{proof}
+
+\subsection{Teorema di De l'Hopital}
+
+\begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+
+Sia $f,g:= [a,b] \to \mathbb{R} $, 
+\begin{itemize}
+\item \[ \lim_{x \to a^+} f(x)= \lim_{x \to a^+} g(x)= l \in \{- \infty, 0, + \infty\}\]
+    \item \textcolor{purple}{derivabili} in $(a,b)$
+    \item $g(x), g'(x) \neq 0 \forall x \in (a, b) $
+    \item $\exists \lim_{x \to a^+}\frac{f'(x)}{g'(x)}= L \in \overline{\mathbb{R}}$
+\end{itemize}
+$\Rightarrow  \lim_{x \to a^+}\frac{f(x)}{g(x)}= L$
+
+
+
+
+\end{tcolorbox}
+
+Il teorema vale anche per $x \to b^-$
+
+\begin{proof}
+
+Caso $l=0, L\in \mathbb{R}$ 
+
+Per ipotesi: $\lim_{x \to a^+}\frac{f'(x)}{g'(x)}= L \in \overline{\mathbb{R}} \Rightarrow$
+
+\[\forall \epsilon>0 \exists \delta=\delta(\epsilon) \mid L- \epsilon < \frac{f'(x)}{g'(x)} < L + \epsilon \]
+
+Per ogni coppia $x, \mu \in (a, a + \delta) \exists x<z<\mu \mid $
+
+\[ L- \epsilon < \frac{f(x)-f(\mu)}{g(x) - g(\mu)}=\frac{f'(z)}{g'(z)} < L + \epsilon \]
+
+Per $\mu \to a^+, f(\mu), g(\mu) \to 0$ (l=0) per ipotesi
+
+\[ L- \epsilon < \frac{f(x)}{g(x)}=\frac{f'(z)}{g'(z)} < L + \epsilon \]
+
+$\Rightarrow  \lim_{x \to a^+}\frac{f(x)}{g(x)}= L$
+
+
+\end{proof}
+
+
+
+\subsection{Monotonia}
+
+Sia $f:= I \to \mathbb{R} $, I intervallo, f \textcolor{purple}{derivabile} in I: 
+
+  \begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+  \textcolor{red}{TEOREMA: }
+
+
+\begin{itemize}
+    \item f \textcolor{purple}{crescente} in I $\Leftrightarrow f'(x) \ge 0 \forall x \in I$
+    \item f \textcolor{purple}{decrescente} in I $\Leftrightarrow f'(x) \le 0 \forall x \in I$
+    
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{proof}
+(f crescente)
+    ($\Leftarrow$) 
+    Siano $x_1, x_2 \in I \mid x_1 < x_2$
+    Considero $f:=[x_1,x_2] \to \mathbb{R}$ e applico Lagrange: 
+    \[\exists x_0 \mid f'(x_0)= \frac{f(x_2)-f(x_1)}{x_2 -x_1} \\ f(x_2) -f(x_1) = f'(x_0) (x_2-x_1) \ge 0 \Rightarrow f(x_2) \ge f(x_1) \]
+
+    
+    ($\Rightarrow$) 
+    \textcolor{red}{Per assurdo}, se $ \exists x_0 \in I f'(x_0) < 0$, 
+    poichè f è \textcolor{purple}{derivabile} in I si ha: 
+    
+
+    \[f(x)- f(x_0) =   (x - x_0)[f'(x_0) + o(1)] \]
+
+    Se $x < x_0 \Rightarrow f(x) > f(x_0) $, ma $f(x) \le f(x_0) \Rightarrow$ \textcolor{red}{assurdo}
+
+    Analogamente per f decrescente
+    
+\end{proof}
+    Corollari: 
+\begin{tcolorbox}[colback=white, colframe=purple]
+\begin{itemize}
+    \item se $f'(x_0)>0 \Rightarrow $ f è \textcolor{purple}{strettamente crescente}
+    \item se $f'(x_0)<0 \Rightarrow $ f è \textcolor{purple}{strettamente decrescente}
+\end{itemize}
+
+\end{tcolorbox}
+\textcolor{purple}{NON} vale $\Leftarrow$
+
+
+\begin{tcolorbox}[colback=white, colframe=purple]
+f è \textcolor{purple}{costante} $ \Leftrightarrow f'(x)=0 \quad \forall x \in I $
+\end{tcolorbox}
+\begin{proof}
+    \begin{math} f'(x)=0 \Rightarrow
+        \begin{cases}
+            f'(x) \ge 0 \; \Leftrightarrow f(x9 \text{ è crescente} \\
+            f'(x) \le 0 \; \Leftrightarrow f(x9 \text{ è decrescente}
+        \end{cases} \Rightarrow
+    \end{math}
+    f(x) è \textcolor{purple}{costante}
+\end{proof}
+
+\begin{tcolorbox}[colback=white, colframe=purple]
+    Se $f'(x_0 \ge 0 \forall x \in I$ e $E:=\{x \in I\mid f'(x)=0 \} = \emptyset $ o ha \textcolor{purple}{solo punti isolati}, allora f è \textcolor{purple}{strettamente crescente}
+Analogamente, se $f'(x_0)<0 \Rightarrow $ $I:=\{x \mid f'(x)=0 \} = \emptyset $ o ha \textcolor{purple}{solo punti isolati}, allora f è \textcolor{purple}{strettamente decrescente}  
+\end{tcolorbox}
+
+
+\subsubsection{Massimi e minimi}
+
+Sia $f:=(x_0 - \delta, x_o + \delta) \in \mathbb{R} quad \delta >0$, derivabile in $(x_0 - \delta, x_o + \delta) $
+
+$x_0$ è 
+\begin{itemize}
+    \item \textcolor{purple}{massimo stretto relativo} se
+    \[f'(x_0) < 0 \; \forall x \in (x_0 - \delta, x_0) \quad f'(x_0) > 0 \; \forall x \in (x_0, x_0 + \delta) \]
+     \item \textcolor{purple}{minimo stretto relativo} se
+    \[f'(x_0) > 0 \; \forall x \in (x_0 - \delta, x_0) \quad f'(x_0) < 0 \; \forall x \in (x_0, x_0 + \delta) \]
+\end{itemize}
+
+
+\section{Applicazioni della derivata seconda}
+
+Sia $f:= (a,b)\to \mathbb{R}$, f derivabile in \textcolor{purple}{intorno} di $x_0$
+\begin{tcolorbox}[colback = pink!10!white,   colframe=red!50!blue]
+    si definisce \textcolor{purple}{derivata seconda}
+    \[f''(x_0):= \lim_{x \to x_0} \frac{f'(x) -f'(x_0)}{x - x_0}\]
+\end{tcolorbox}
+
+\subsection{Ricerca estremi relativi}
+
+Sia $f:=(a,b9 \to \mathbb{R} \quad x_0 \in (a,b)$ \textcolor{purple}{due} volte derivabile in $x_0$
+
+Se $f'(x_0) = 0$ e
+
+\begin{itemize}
+    \item $f''(x_0)>0 \Rightarrow x_0$ è \textcolor{purple}{minimo} relativo forte
+    \item $f''(x_0)<0 \Rightarrow x_0$ è \textcolor{purple}{massimo} relativo forte 
+    
+\end{itemize}
+
+Sono condizioni \textcolor{purple}{solo sufficienti}
+
+Per \textcolor{purple}{Taylor}, per $x \to x_0$ ($f'(x_0)=0)$
+
+\[f(x)= f(x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + o[x-x_0)^2]\]
+
+La funzione è approssimabile ad una \textcolor{purple}{parabola} con vertice in $(x_0, f(x_0)$ e \textcolor{purple}{concavità} data dal segno di $f''(x_0)$
+
+\subsection{Concavità e convessità}
+
+\subsubsection{Definizione di convessità}
+
+Sia $f:= I \to \mathbb{R}$, I un generico intervallo
+\begin{tcolorbox}[colback = pink!10!white,   colframe=red!50!blue]
+
+    f è detta: 
+
+    \begin{itemize}
+        \item \textcolor{purple}{convessa} in I se, per ogni \textcolor{purple}{terna} $x_1 < x< x_2$
+        \[f(x) \le f(x_1) + \frac{f(x_2) - f(x_1)}{x_2 - x_1}(x -x_1)\]
+        ossia la funzione si trova \textcolor{purple}{sotto} la retta \textcolor{purple}{secante}
+        \item \textcolor{purple}{concava} in I se, per ogni \textcolor{purple}{terna} $x_1 < x< x_2$
+        \[f(x) \ge f(x_1) + \frac{f(x_2) - f(x_1)}{x_2 - x_1}(x -x_1)\]
+        ossia la funzione si trova \textcolor{purple}{sopra} la retta \textcolor{purple}{secante}
+    \end{itemize}
+  
+\end{tcolorbox}
+
+\subsubsection{Convessità e derivata seconda}
+
+Sia $f:= I \to \mathbb{R}$, I generico intervallo
+
+Sono \textcolor{purple}{equivalenti} le seguenti affermazioni: 
+
+\begin{enumerate}[label=(\alph*)]
+    \item f è \textcolor{purple}{convessa} secondo la definizione data sopra 
+    \item Per ogni coppia di punti $x_0, x \in I$
+    \[f(x) \ge  f(x_0) + f'(x_0)(x - x_0)\]
+    (Ossia, la funzione si trova \textcolor{purple}{sopra} la retta \textcolor{purple}{tangente}
+    \item $f''(x) \ge 0 \quad \forall x \in I$
+    \item  $f'(x)$ è \textcolor{purple}{crescente} in I  
+\end{enumerate}
+
+Allo stesso modo, per f \textcolor{purple}{concava}
+\section{Formule di Taylor}
+
+ \begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+  \textcolor{red}{TEOREMA: }
+  
+Sia $f:(a,b) \to \mathbb{R}$ derivabile \textcolor{purple}{n volte} in $x_0$ (derivabile n-1 volte in $B_{\delta}(x_0)$ e derivabile in $x_0$, 
+
+per $x \to x_0$ 
+
+\[f(x)= P_{n}^f(x, x_0) + R_{n}^f(x, x_0) \]
+
+\end{tcolorbox}
+
+
+con P, \textcolor{purple}{polinomio di Taylor}, tale che
+\[P_{n}^f(x,x_0) = f(x_0) +f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + ...  \frac{f^{[n]}(x_0)}{n!}(x-x_0)^n \]
+
+e con R \textcolor{purple}{Resto di Peano}, tale che 
+
+\[ R_{n}^f(x,x_0)= o(x-x_0)^n \]
+
+
+Se $x \to 0$, le precedenti formule si dicono \textcolor{purple}{formule di Mc. Laurin}
+
+\begin{proof}
+    Il resto di Peano al II ordine è $o(x-x_0)$
+
+Dobbiamo dimostrare che: 
+    \[\lim_{x\to x_o}\frac{R_{2,f}(x,x_0)}{(x-x_0)^2}=0 \]
+    
+    \[\Rightarrow \lim_{x\to x_o}\frac{f(x)-P_{2,f}(x,x_0)}{(x-x_0)^2}=0\]
+
+    Presenta la forma di indecisione $\frac{0}{0}$, applichiamo quindi il \textcolor{purple}{teorema di De l'Hopital}
+
+    \[\lim_{x\to x_o}\frac{f'(x)-[f'(x_0)+2f''(x_0)(x-x_0)]}{2(x-x_0)}=\lim_{x\to x_o}\frac{1}{2} \left[ \frac{f'(x)-f'(x_0)]}{(x-x_0)} - f''(x_0) \right]= \] 
+    \[\lim_{x\to x_o}\frac{1}{2} [f''(x) -f''(x_0) =0\]
+\end{proof}
+
+\subsubsection{Unicità dello sviluppo}
+
+\begin{tcolorbox}[colback= red!15!yellow!5!white, colframe=red]
+  \textcolor{red}{TEOREMA: }
+
+Sia $f:=(a,b) \to \mathbb{R}$ e $x_0 \in (a, b)$
+
+Supponiamo che valgano per $x \to x_0$: 
+\[f(x)=a_0 + a_1(x-x_0)+...+a_n(x-x_0)^n + o[(x-x_0)^n]\]
+\[f(x)=b_0 + b_1(x-x_0)+...+b_n(x-x_0)^n + o[(x-x_0)^n]\]
+
+$\Rightarrow a_k = b_k \forall k \in 0,..,n$
+\end{tcolorbox}
+
+\begin{proof}
+    \textcolor{red}{Per assurdo: } $\exists k \le n \mid a_k \neq b_k $
+
+    \begin{itemize}
+        \item Sottraggo il II sviluppo al primo e ottengo: 
+        \[0=(a_k-b_)(x -x_0)^k + ... + (a_n - b_n)(x - x_0)^n + o[(x-x_0)^n]\]
+        \item per $x \neq x_0$ divido per $(x - x_0)^k$
+        \[-a_k + b_k = ... + (a_n - b_n) (x - x_0)^{n-k} + o[(x-x_0)^{n-k}]\]
+        \item Passando al limite per $x \to x_0$
+        \[\lim_{x \to x_0} -a_k + b_k =-a_k + b_k = 0  \]
+    \end{itemize}
+
+    $\Rightarrow a_k = b_k$
+    
+\end{proof}
+
+\begin{tcolorbox}[colback=white, colframe=purple]
+    Se $f:(a,b) \to \mathbb{R} \quad x_0 \in (a,b)$ è \textcolor{purple}{derivabile} n-volte in $x_0$ e $f(x)=a_0 + a_1(x-x_0)+...+a_n(x-x_0)^n + o[(x-x_0)^n]$, 
+
+    \begin{itemize}
+        \item $a_0 = f(x_0)$
+        \item $a_1= f'(x_0)$
+        \item ...
+        \item $a_n = \frac{f^{[n]}(x_0)}{n!}$
+    \end{itemize}
+
+    \[f^{[n]}(x_0) = a_n*n!\]
+\end{tcolorbox}
+
+
+
+\end{document}
