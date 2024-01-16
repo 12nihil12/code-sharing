@@ -113,7 +113,7 @@ int resize (arr_int * v, int newdim){
     }
 
     
-    memcpy(appo, v->raw, 4*v->used); // copia v.used membri di v sull'appoggio
+    memcpy(appo, v->raw, sizeof(int)*v->used); // copia v.used membri di v sull'appoggio
 
     //paf("data.backup.dat",appo, newdim); //crea un backup dei dati su file
 
