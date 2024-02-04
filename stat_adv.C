@@ -63,6 +63,59 @@ double scarto_xy (double x[], double y[], double x_m, double y_m){
 */
 
 
+
+void istogramma(arr_int dat, double max, double min, int nbins){
+    int pm = posmin(dat.raw,0,dat.used); 
+    if(dat.raw[pm] == min){
+        min = min - 0.01; 
+    }
+
+    int * c; 
+    //cout << "intervallo : " << max - min; 
+    double d; 
+    d = (max - min)/nbins; 
+
+    //cout << "passo: " << d << endl; 
+
+    if (d == 0){
+        return; 
+    }
+
+    c = new int [nbins]; 
+
+    for(int k = 0; k < nbins; k++){
+        c[k]=0; 
+    }
+
+    
+
+    for (int k = 0; k < dat.used; k++){
+        if(dat.raw[k]> min && dat.raw[k] <= max){
+            int shift=0;  
+            while(min + shift*d < dat.raw[k]){
+                shift++; 
+            }
+            //cout << dat[k] << " < "<< min + shift * d << endl; 
+            c[shift - 1]++; 
+            //cout << dat[k] << " | " << shift << endl; 
+        }
+
+    }    
+    for(int k = 0; k < nbins;  k++){
+        cout << (min + k* d) << " to " << ( min + (k+1)*d) << " | "; 
+    
+        //cout << k << "| " << c[k] << endl;      
+        for(int j = 0; j < c[k] ; j++){
+            cout << "*";
+        }
+        cout << endl; 
+    }
+
+    delete[] c; 
+    c = NULL; 
+}
+
+
 double retta_min_quad (points_array v,double & m, double& q){
     double x_m, y_m; 
     double m, q;
@@ -134,7 +187,7 @@ double chi_quad (data_set x, double mu, double sigma){
     double chi = 0;  
     double scarto; 
     for (int i = 1; i <= x.used; i++){
-        scarto = x.raw[i]-mu; 
+        scarto = x.raw[i].val-mu; 
         chi = pow((scarto),2)/pow(sigma,2); 
     }
 

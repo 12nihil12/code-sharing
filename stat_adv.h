@@ -7,6 +7,8 @@
 #include "librandom.h"
 #include "R2points_array.h"
 #include "libstat.h"
+#include "array_int.h"
+
 #define e 2.71828
 
 using namespace std; 
