@@ -1,0 +1,228 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb} % /mathbb{}
+\usepackage[bottom=1cm, right=2cm, left=2cm, top=1cm]{geometry}
+\title{Relazione}
+\author{Gruppo 1C: Cazzetta Alessia, Frigerio Elisa, Hedhili Ibrahim }
+\date{March 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduzione}
+
+
+L'esperienza consiste nella misura della costante elastica di due molle, una non pretesa e l'altra sì,  e si articola in due parti: metodo statico e dinamico. 
+Per la misura statica, si osserveranno i sistemi massa-molla all'equilibrio, ricavando la costante elastica dai rispettivi allungamenti correlati alla diversa quantità di massa utilizza.
+Per la misura dinamica, si osserverà l'oscillazione di sistemi massa-molla, e si ricaverà la loro costante elastica tramite la misurazione delle rispettive frequenze. 
+
+\section{Modello teorico }
+Per la misura statica, si suppone di essere nel caso unidimensionale (un grado di libertà del sistema) e  nella regione elastica della molla, e che dunque il suo comportamento  sia descrivibile tramite la legge di Hooke: $F_el= - k (l-l0)$
+Con $F_el$ forza elastica, k costante elastica e l0 lunghezza a riposo della molla. 
+Quando, per ogni $m_i $(dove i indica il numero di pesetti appesi) si ferma nella nuova posizione di equilibrio,la forza totale agente sulla massa appesa è nulla e abbiamo che, proiettando sull'asse z rivolto verso il basso, 
+$F_i= m_i g -k(l-h_i-h_r)$
+Essendo g l’accelerazione di gravità terrestre. Sottraendo ad essa l'espressione analoga per F0, si ottiene per ogni i
+$k=g \frac{m_i-m_0)}{h_i-h_0}$
+Nel caso dinamico, si suppone il sistema ad un solo grado di libertà, supponendo che oscilli solo lungo la verticale (z),  e si trascurano tutti gli attriti. Ci si pone dunque nel caso dell'oscillatore armonico semplice, descrivibile da questa equazione:  
+$z(t)= A \cos(\omega t+ \phi) $
+Con $\omega=\sqrt{\frac{k}{m}}$ frequenza angolare , A ampiezza e $\phi$ fase. 
+
+\section{Apparato e strumentazione}
+Il supporto é stato montato tramite l’utilizzo di tre aste e quattro morsetti. 
+Sia nel caso statico che in quello dinamico abbiamo ancorato le molle al supporto utilizzando un elastico.
+Abbiamo massimizzato la stabilità dell’apparato stringendo il più possibile i morsetti e posizionando l’asse orizzontale perpendicolarmente rispetto alla direzione dell’accelerazione di gravità grazie all’uso di una livella a bolla.
+Strumenti di misura:
+\begin{itemize} 
+
+\item	Bilancia con risoluzione di $1x10E-5$ kg
+\item	Sonar con risoluzione di$ 1x10E-3$m  e sensibilità di  0.15m. 
+\item	Calibro con risoluzione di $2x10E-5$ m
+\end{itemize}
+Strumenti usati per l'assemblaggio dell’apparato sperimentale:
+\begin{itemize}
+
+\item	Molla pretesa
+\item	Molla non pretesa
+\item	4 morsetti
+\item	3 aste
+\item	Pesetti + asta di supporto + piattello
+
+
+\end{itemize}
+Altri strumenti utilizzati: 
+Livella a bolla 
+
+
+\section{Misure effettuate}
+Tutte le misure vengono ripetute aggiungendo progressivamente pesetti (nominalmente da 20 g ciascuno) al supporto appeso alla molla. 
+Si è definito $m_i$  la misura degli i pesetti , più il supporto, più la molla, che sono state poste insieme sulla bilancia. Appurato che la massa effettiva dei dischi è diversa dalla massa nominale di 20g, si ha  prestato attenzione ad inserirli sul supporto per la misura nello stesso ordine in cui li si ha pesati. Si è assunta come incertezza sulla massa la risoluzione della bilancia (0.00001 m). 
+
+Le altezze sono state misurate nel seguente modo:
+
+\paragraph{Molla 1-sonar}
+Il sonar è stato posto sotto la molla, con l'accortezza che l'estremo inferiore di essa non si trovasse a meno di 15 centimetri dalla sua cima (come da istruzioni). Per questa ragione, non è stato possibile aggiungere più di 4 dischi al supporto, in quanto l'allungamento della molla col quinto disco non consentiva di rispettare la distanza. All’aggiunta di ogni disco, si è misurata la distanza tra l'estremo inferiore del supporto e la cima del sonar. Sono state effettuate 30 misure per ciascuna $m_i$, definendo$ h_i$ la media di esse. L'incertezza è stata assunta come quella nominale dello strumento (1 mm), quindi sono stati tenute solo 3 cifre significative per l'altezza. 
+
+
+\begin{table}[h]
+    \begin{tabular}{|c|c|c|}
+    \hline
+      &  m[kg] & 	h [m] \\
+        \hline
+m0&0.05044	&	0.456\\
+        \hline
+
+m1 & 0.07055	&	0.393\\
+        \hline
+
+m2 &0.09035	&	0.331\\
+        \hline
+
+m3 &0.11003	&	0.268\\
+        \hline
+m4 & 0.13003	&	0.207\\
+\hline
+    \end{tabular}
+      \begin{tabular}{c|c}
+         &  \\
+         & 
+    \end{tabular}
+     \begin{tabular}{|c|c|c|}
+     \hline
+     & m [kg]& $\Delta h [m]$ \\
+       \hline
+        m0	& 0.05044	&	0.000\\ 
+          \hline
+m1	&0.07055	&	0.073\\
+  \hline
+m2 &	0.09035&0.136\\
+  \hline
+m3 &	0.11003	&	0.200\\
+  \hline
+m4	&0.13003	&	0.258\\
+  \hline
+
+
+
+
+    \end{tabular}
+    \caption{Valori di $m_i$ e corrispondenti altezze misurate (a sinistra con il sonar, a destracon il calibro)}
+    \label{tab:my_label}
+\end{table}
+
+\paragraph{Molla 1- calibro}
+Si è segnato sul supporto verticale (asta) la posizione dell'estremo inferiore del supporto corrispondente a $m_0$ ($h_0$). Per le successive$ m_i$, si è misurata la distanza tra il loro estremo inferiore e il livello segnato $(\Delta h)$. Per m4 questa procedura non è stata possibile, in quanto il calibro si è rivelato troppo corto. La misura è stata quindi effettuata in due tempi, segnando un punto intermedio sul supporto verticale. Essendo stata effettuata una misura sola per ogni altezza, e ritenendo inverosimile usare la risoluzione dello strumento (0.02 mm), l'incertezza è stata stimata arrotondando a 0.001 m il massimo tra la deviazione standard della media delle altezze misurate col calibro per la molla 2, in quanto ritenuta in grado di stimare la nostra capacità di precisione nell'utilizzo dello strumento per una misura di lunghezza comparabile. 
+\paragraph{Molla 2 – sonar}
+La misura dell'altezza è stata effettuata come per la massa 1 , ma è stato possibile arrivare fino a m9. Si è tenuta una cifra decimale in più rispetto alla molla 1 (4 significative) e l'incertezza su h è stata assunta come la deviazione standard (non della media) delle 30 misure per ciascuna h. 
+
+\begin{table}[h]
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+         	&m [kg]	&	$<h>$[m] &$ s_h$[m] \\
+          \hline
+m0	& 0.06205 & 0.3846	& 0.0004 \\ 
+m1	& 0.08213  &	0.3777 &	0.0003 \\ 
+m2	& 0.10196&0.3696 &	0.0004\\
+m3	& 0.1219 	&0.3620	&0.0002 \\
+m4	&0.14163		&0.3543	&0.0003 \\
+m5	&0.16169&	0.3468	&0.0002 \\
+m6	&0.18167&0.3391 &	0.0003\\
+m7	&0.20153 &0	0.3307 &	0.0002 \\
+m8	&0.22146 &0.3232	&0.0001 \\
+m9	&0.24167 &0.3155 &	0.0003 \\
+\hline
+    \end{tabular}
+    \begin{tabular}{c|c}
+         &  \\
+         & 
+    \end{tabular}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+         	& m[kg]	&	h1[m] &	h2[m] &	h3[m]	& $<h> $[m]	& sh[m]\\
+          \hline
+
+m0	&0.06205 &		0.21402 &	0.2147	&0.21442 &	0.2144 &	0.0002 \\
+m2	&0.10196 &	0.1998&	0.19922&	0.1992&	0.1994&	0.0002\\
+m5	&0.16169	&0.1777&	0.1769	&0.17618&	0.1769&	0.0004\\
+m7&	0.20153&0.16138&	0.1613	&0.15902	&0.1606	&0.0008\\
+m9	&0.24167 &		0.14592 &	0.1459 &	0.14628	&0.1460 &	0.0001\\
+\hline
+    \end{tabular}
+    \caption{Valori di $m_i$ e, a sinistra corrispettiva altezza media misurata con il sonar, a destra le misure eseguite con il calibro}
+    \label{tab:my_label}
+\end{table}
+
+
+\paragraph{Molla 2 – calibro }
+Si è misurata la distanza h tra l'estremo del supporto e il piano del tavolo. Sono state effettuate tre misure per ogni altezza, saltando di due/tre dischi alla volta. L'incertezza su $h_i$ è stata assunta come la deviazione standard della media  delle tre misure. \newline
+
+ Per quanto riguarda la misura dinamica, per entrambe le molle la frequenza angolare è stata ricavata, con la rispettiva incertezza, dal programma del sonar, utilizzato con una frequenza di campionamento di 200 Hz. 
+
+
+\section{Analisi dei dati}
+
+Per ogni $m_i$, si è definito  $\Delta m_i= m_i -m_0$, con$ m_0$ la massa della singola molla più il supporto e incertezza uguale alla somma in quadratura delle  incertezze su $m_i $e $m_0$. (0.00001 kg) 
+
+\paragraph{Molla 1- sonar}
+Si è definito $\Delta h_i=h_0-h_i$, con $h_0$ l'altezza corrispondente a $m_0$, con incertezza uguale alla somma in quadratura delle incertezze su $h_i$ e $h_0$  (0.001 m). 
+Essendo questa risultata, di almeno un ordine di grandezza superiore all’incertezza su $\Delta m$, adeguatemente riportata tramite una stima di k, si è assunta come ascissa per i minimi quadrati $\Delta m$ , e l'incertezza su Dm non è stata riportata sulle $y(\Delta h)$ e sommata all'incertezza su y. I minimi quadrati ci hanno dunque fornito l'espressione per la retta $\Delta h=B*Dm+A. $ 
+Calcolando le ye (I valori attesi di $\Delta h$ tramite la legge trovata), è risultato un fit perfetto fino alla terza cifra decimale. Essendo questa l'ultima cifra da noi tenuta nel prendere le misure, non abbiamo effettuato alcun test del $X ^2 $, in quanto non avrebbe avuto senso. 
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+      & $ x=Dm (kg)$	& $y=Dh (m)$	& $x^2	$& $y^2$ &	$x*y$	 & y	& $B*x+A$ \\
+       \hline
+& 0.02011	 &0.061 &	0.000404412	&0.003721 &	0.00122671 &	0.061 &	0.061 \\
+\hline
+&0.03991	 & 0.124	& 0.001592808	&0.015376	&0.00494884 &	0.124	&0.124 \\
+\hline
+&0.05959 &	0.186&	0.003550968 &	0.034596	&0.01108374 &	0.186	&0.186 \\
+\hline
+&0.07959	&0.249	&0.006334568&	0.062001	&0.01981791	&0.249	&0.249 \\
+						\hline
+    \\
+    \hline
+somma & 0.1992	&0.62 &	0.011882756	&0.115694 &	0.0370772	\\	
+\hline
+    \end{tabular}
+    \caption{Molla 1-sonar}
+    \label{tab:my_label}
+\end{table}
+
+
+\paragraph{Molla 1- calibro} (Tab 1.) 
+In questo caso, avevamo  misurato proprio $\Delta h$, a cui abbiamo assegnato un'incertezza di 0.001 m. Col ragionamento di prima, si pone $x=\Delta m$ e$ y=\Delta $h, assumendo come incertezza su y quella calcolata per $\Delta h$. Effettuando il controllo sulla retta dei minimi quadrati, è risultato un $X ^2 $ ridotto prossimo a 6. 
+
+\paragraph{Molla 2-sonar}
+Definendo$ \Delta h_i = h_0-h_i$ e assumendo come incertezza per $\Delta h$ la somma in quadratura delle incertezze su $h_i$ e $h_0$, si è rilevato che, adeguatamente trasposta, fosse di un'ordine di grandezza superiore a quella sulle masse, dunque, con ragionamento analogo alla molla 1, è stata assunta come incertezza per ciascuna $y(\Delta h)$. Poichè le incertezze sulle y, pur essendo diverse, erano tutte dello stesso ordine di grandezza, si è utilizzato il metodo dei minimi quadrati semplici, e non pesati, assumendo come incertezza sulle y il massimo tra le incertezze. Il test del $X ^2 $ è stato effettuato, invece, con le rispettive incertezze, e ha restituito una compatibilità del 70\% circa.  
+
+
+
+\paragraph{Molla 2- calibro}
+Definendo $\Delta h_i=h_0-h_i$, l'incertezza su ogni $\Delta h_i$ è stata assunta come la somma in quadratura delle incertezze su$ h_0$ e $h_i$. Il ragionamento si è rivelato analogo a quello per la molla 2-sonar. E' quindi stato utilizzato il metodo dei minimi quadrati semplici, con $y=\Delta h$ e incertezza su y presa come il massimo delle incertezze. Il test del $X ^2 $,  effuettuato sulle y con la rispettive incertezze, ha dato una compatibilità del 15\% circa. 
+
+Dai coefficienti angolari delle rette, trascurando l'intercetta (compatibile con 0), si ottiene $k=\frac{g}{B}$. L'incertezza su k è stata calcolata tramite il metodo della propagazione degli errori, assumendo un'incertezza su g pari a $0.01 m/s^2$, che comunque risulta ininfluente sull'incertezza finale. 
+
+\begin{figure}[h]
+    \includegraphics[width=0.5\textwidth]{m1-stat-confronto}
+    \includegraphics[width=0.5\textwidth]{m2-stat-confronto.eps}
+    \caption{Confronto tra il fit del sonar e del calibro, a sinistra per la molla 1, a destra per la molla 2}
+\end{figure}
+\section{Conclusioni}
+
+\paragraph{Metodo statico: }
+
+Per la molla 1 si ottiene una costante elastica $k=(3.10 \pm 0.02)$ N/m per le misure effettuate con il sonar, e $ k= (3.14 \pm 0.02)$ N/m  per quelle col calibro. Le barre di errore, come ci si aspetta, si toccano.  discrepanza tra la costante elastica ottenuta misurando col sonar e col calibro è circa 1.3 \% . Per le misure effettuate col sonar, il fit perfetto fino all'ultima cifra suggerisce che, tenendo più cifre decimali nella misura di altezza, si sarebbe potuta ottenere una migliore approssimazione di k.
+Per il calibro, l'alto valore d $X ^2 $ indica che si è sottostimata l'incertezza sulle misure, o che queste  #
+\newline
+ Per la molla 2 si ottiene una costante elastica $ k=(24.8 \pm 0.3)$N/m tramite le misure effettuate col sonar, e di $(25.3 \pm 0.5)$N/m col calibro. Le barre di errore hanno una fascia di sovrapposizione. La discrepanza è circa 2.0\%. Il fit è migliore per i dati ottenuti col sonar (70\%), con il quale, tra l'altro sono state effettuate più misure.
+
+\paragraph{Metodo dinamico:}
+
+\paragraph{Confronto:}
+
+
+\end{document}
