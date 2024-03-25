@@ -9,6 +9,7 @@ hold on
 errorbar(x,yo, err, 'o b')
 xlabel('Dm [kg]')
 ylabel('Dh [m]')
+legend({'fit', 'punti sperimentali'},'Location','southeast')
 
 %%m1 calibro
 
@@ -22,6 +23,7 @@ hold on
 errorbar(x,yo, err, 'o k')
 xlabel('Dm [kg]')
 ylabel('Dh [m]')
+legend({'fit', 'punti sperimentali'},'Location','southeast')
 
 %%m1 confronto
 
@@ -41,6 +43,7 @@ hold on
 errorbar(x,yoc,err, 'k o ')
 xlabel('Dm [kg]')
 ylabel('Dh [m]')
+legend({'fit sonar', 'fit calibro', 'pti. sper. sonar', 'pti. sper calibro'} ,'Location','southeast')
 
 
 %% m2 sonar 
@@ -54,7 +57,7 @@ hold on
 errorbar(x,yo,err,'b o')
 xlabel('Dm [kg]')
 ylabel('Dh [m]')
-
+legend({'fit', 'punti sperimentali'},'Location','southeast')
 
 %% m2 calibro
 
@@ -68,7 +71,7 @@ hold on
 errorbar(x,yo, err, 'o k')
 xlabel('Dm [kg]')
 ylabel('Dh [m]')
-
+legend({'fit', 'punti sperimentali'},'Location','southeast')
 
 %% m2 confronto
 
@@ -90,3 +93,4 @@ hold on
 errorbar(xc,yoc,errc, 'k o ')
 xlabel('Dm [kg]')
 ylabel('Dh [m]')
+legend({'fit sonar', 'fit calibro', 'pti. sper. sonar', 'pti. sper calibro'} ,'Location', 'southeast')
